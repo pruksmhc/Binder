@@ -16,19 +16,21 @@ class Executor(object):
         self.new_col_name_id = 0
         self.qa_model = OpenAIQAModel(args, keys)
 
-    def nsql_exec(self, nsql: str, db: pd.DataFrame, verbose=True):
+    def nsql_exec(self, stamp, nsql: str, db: pd.DataFrame, verbose=True):
         # Add import part
-        import_part = """import random
+        import_part = """import sys
+import random
 import json
 import pandas as pd
 import pickle
 import numpy as np
-from collections.abc import Iterable
-from nsql.qa_module.openai_qa import OpenAIQAModel
-from nsql.database import NeuralDB
 import copy
 import os
 import time
+sys.path.append('./')
+from collections.abc import Iterable
+from nsql.qa_module.openai_qa import OpenAIQAModel
+from nsql.database import NeuralDB
 verbose = {}""".format(str(verbose))
 
         # Add qa_map function

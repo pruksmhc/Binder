@@ -106,9 +106,9 @@ CREATE TABLE Highest mountain peaks of California(
 3 example rows:
 SELECT * FROM w LIMIT 3;
 row_id	rank	mountain peak	mountain range	elevation	prominence	isolation	location
-0	1	mount whitney	sierra nevada	14505 ft; 4421 m	10080 ft; 3072 m	1646 mi; 2649 km	36°34′43″n 118°17′31″w﻿ / ﻿36.5786°n 118.292°w
-1	2	mount williamson	sierra nevada	14379 ft; 4383 m	1677 ft; 511 m	5.4 mi; 8.7 km	36°39′21″n 118°18′40″w﻿ / ﻿36.6559°n 118.3111°w
-2	3	white mountain peak	white mountains	14252 ft; 4344 m	7196 ft; 2193 m	67 mi; 109 km	37°38′3″n 118°15′21″w﻿ / ﻿37.6341°n 118.2557°w
+0	1	mount whitney	sierra nevada	14505 ft; 4421 m	10080 ft; 3072 m	1646 mi; 2649 km	36°34′43″n 118°17′31″w﻿ / ﻿36.5786°n 118.292°w
+1	2	mount williamson	sierra nevada	14379 ft; 4383 m	1677 ft; 511 m	5.4 mi; 8.7 km	36°39′21″n 118°18′40″w﻿ / ﻿36.6559°n 118.3111°w
+2	3	white mountain peak	white mountains	14252 ft; 4344 m	7196 ft; 2193 m	67 mi; 109 km	37°38′3″n 118°15′21″w﻿ / ﻿37.6341°n 118.2557°w
 */
 Q: which mountain peak has a prominence more than 10,000 ft?
 NeuralSQL: SELECT `mountain peak` FROM w WHERE QA("map@prominence in ft?"; prominence) > 10000
@@ -191,9 +191,9 @@ CREATE TABLE FC Seoul in Asian football(
 3 example rows:
 SELECT * FROM w LIMIT 3;
 row_id	#	season	competition	date	round	opponent	h / a	result	scorer (s)
-0	35	2011	afc; champions league	2011-03-02 00:00:00	group stage	al-ain	a	1–0	s : dejan damjanović
-1	36	2011	afc; champions league	2011-03-15 00:00:00	group stage	hangzhou greentown	h	3–0	s : dejan damjanović, ou kyoung-jun, mauricio molina
-2	37	2011	afc; champions league	2011-04-06 00:00:00	group stage	nagoya grampus	a	1–1	s : choi hyun-tae; n : kensuke nagai
+0	35	2011	afc; champions league	2011-03-02 00:00:00	group stage	al-ain	a	1–0	s : dejan damjanović
+1	36	2011	afc; champions league	2011-03-15 00:00:00	group stage	hangzhou greentown	h	3–0	s : dejan damjanović, ou kyoung-jun, mauricio molina
+2	37	2011	afc; champions league	2011-04-06 00:00:00	group stage	nagoya grampus	a	1–1	s : choi hyun-tae; n : kensuke nagai
 */
 Q: how many consecutive games did dejan damjanovic score a goal in during the 2013 season?
 NeuralSQL: QA("ans@how many consecutive games did dejan damjanovic score a goal?"; SELECT `scorer (s)` FROM w WHERE season = 2013)
@@ -259,7 +259,7 @@ CREATE TABLE List of spans(
 	country text,
 	city text,
 	height of pylons text,
-	span width,\nleaning straight line text,
+	span width,\nleaning straight line text,
 	span width,\nhorizontal measurement text,
 	height of cable over ground text,
 	year of inauguration text,
@@ -267,7 +267,7 @@ CREATE TABLE List of spans(
 /*
 3 example rows:
 SELECT * FROM w LIMIT 3;
-row_id	tramway	country	city	height of pylons	span width,\nleaning straight line	span width,\nhorizontal measurement	height of cable over ground	year of inauguration	notes
+row_id	tramway	country	city	height of pylons	span width,\nleaning straight line	span width,\nhorizontal measurement	height of cable over ground	year of inauguration	notes
 0	peak 2 peak gondola	canada	whistler	65m	3024 m	3019 m	436 m	2008	3s aerial tramway constructed by doppelmayr
 1	hut of regensburg material transport aerial railway	austria	falbeson	?	?	?	430 m	?	none
 2	vanoise express	france	vanoise	none	1850 m	1800 m	380 m	2003	none
